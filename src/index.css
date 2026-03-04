@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@layer base {
+  :root {
+    --background: 45 33% 97%;
+    --foreground: 30 10% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 30 10% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 10% 12%;
+
+    --primary: 45 90% 50%;
+    --primary-foreground: 30 10% 10%;
+
+    --secondary: 45 30% 92%;
+    --secondary-foreground: 30 10% 30%;
+
+    --muted: 45 20% 94%;
+    --muted-foreground: 30 8% 50%;
+
+    --accent: 45 80% 55%;
+    --accent-foreground: 30 10% 10%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 100% 60%;
+    --input: 0 100% 70%;
+    --ring: 45 90% 50%;
+
+    --radius: 0.625rem;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 30 8% 40%;
+    --sidebar-primary: 45 90% 50%;
+    --sidebar-primary-foreground: 30 10% 10%;
+    --sidebar-accent: 45 40% 94%;
+    --sidebar-accent-foreground: 30 10% 12%;
+    --sidebar-border: 0 100% 70%;
+    --sidebar-ring: 45 90% 50%;
+
+    /* Custom tokens */
+    --success: 145 60% 42%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 55%;
+    --warning-foreground: 38 92% 12%;
+    --info: 220 80% 55%;
+    --info-foreground: 0 0% 100%;
+
+    --priority-critical: 0 100% 50%;
+    --priority-high: 25 95% 55%;
+    --priority-medium: 45 90% 50%;
+    --priority-low: 145 60% 42%;
+    --priority-none: 30 8% 60%;
+
+    --neon-red: 0 100% 55%;
+    --neon-yellow: 50 100% 50%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(45 90% 50%), hsl(50 100% 55%));
+    --gradient-accent: linear-gradient(135deg, hsl(45 80% 55%), hsl(50 90% 60%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(45 33% 97%));
+
+    --shadow-glow: 0 0 16px hsl(50 100% 50% / 0.35);
+    --shadow-glow-red: 0 0 12px hsl(0 100% 55% / 0.3);
+    --shadow-card: 0 4px 24px hsl(30 10% 12% / 0.06);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cdefs%3E%3Cstyle%3Eline,circle,rect%7Bstroke:%23a07850;fill:none;stroke-width:1.4;opacity:0.35%7Dcircle.dot%7Bfill:%23a07850;stroke:none;opacity:0.45%7Drect%7Bstroke:%23a07850;opacity:0.3;stroke-width:1.2%7D%3C/style%3E%3C/defs%3E%3Cline x1='0' y1='40' x2='60' y2='40'/%3E%3Cline x1='60' y1='40' x2='60' y2='80'/%3E%3Cline x1='60' y1='80' x2='120' y2='80'/%3E%3Cline x1='120' y1='80' x2='120' y2='40'/%3E%3Cline x1='120' y1='40' x2='200' y2='40'/%3E%3Cline x1='20' y1='0' x2='20' y2='30'/%3E%3Cline x1='20' y1='30' x2='40' y2='30'/%3E%3Cline x1='140' y1='0' x2='140' y2='20'/%3E%3Cline x1='140' y1='20' x2='180' y2='20'/%3E%3Cline x1='180' y1='20' x2='180' y2='60'/%3E%3Cline x1='0' y1='120' x2='40' y2='120'/%3E%3Cline x1='40' y1='120' x2='40' y2='160'/%3E%3Cline x1='40' y1='160' x2='100' y2='160'/%3E%3Cline x1='100' y1='160' x2='100' y2='120'/%3E%3Cline x1='100' y1='120' x2='160' y2='120'/%3E%3Cline x1='160' y1='120' x2='160' y2='180'/%3E%3Cline x1='160' y1='180' x2='200' y2='180'/%3E%3Cline x1='80' y1='0' x2='80' y2='20'/%3E%3Cline x1='80' y1='20' x2='100' y2='20'/%3E%3Cline x1='100' y1='20' x2='100' y2='60'/%3E%3Cline x1='0' y1='180' x2='30' y2='180'/%3E%3Cline x1='30' y1='180' x2='30' y2='200'/%3E%3Cline x1='80' y1='180' x2='80' y2='200'/%3E%3Cline x1='120' y1='160' x2='120' y2='200'/%3E%3Ccircle class='dot' cx='60' cy='40' r='3'/%3E%3Ccircle class='dot' cx='120' cy='80' r='3'/%3E%3Ccircle class='dot' cx='60' cy='80' r='3'/%3E%3Ccircle class='dot' cx='20' cy='30' r='2.5'/%3E%3Ccircle class='dot' cx='140' cy='20' r='2.5'/%3E%3Ccircle class='dot' cx='180' cy='20' r='3'/%3E%3Ccircle class='dot' cx='40' cy='120' r='3'/%3E%3Ccircle class='dot' cx='100' cy='160' r='3'/%3E%3Ccircle class='dot' cx='100' cy='120' r='3'/%3E%3Ccircle class='dot' cx='160' cy='120' r='3'/%3E%3Ccircle class='dot' cx='80' cy='20' r='2.5'/%3E%3Ccircle class='dot' cx='100' cy='20' r='2.5'/%3E%3Ccircle class='dot' cx='120' cy='40' r='3'/%3E%3Ccircle class='dot' cx='160' cy='180' r='3'/%3E%3Crect x='55' y='75' width='10' height='10' rx='1.5'/%3E%3Crect x='135' y='15' width='10' height='10' rx='1.5'/%3E%3Crect x='95' y='155' width='10' height='10' rx='1.5'/%3E%3Crect x='175' y='55' width='10' height='10' rx='1.5'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
+  }
+}
+
+@layer utilities {
+  .glass {
+    backdrop-filter: blur(12px);
+    background: hsl(var(--card) / 0.85);
+    border: 1px solid hsl(var(--neon-red) / 0.3);
+  }
+
+  .glow-primary {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .glow-red {
+    box-shadow: var(--shadow-glow-red);
+  }
+
+  .border-neon-red {
+    border-color: hsl(var(--neon-red));
+  }
+
+  .border-neon-yellow {
+    border-color: hsl(var(--neon-yellow));
+  }
+
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.5s ease-out;
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.3s ease-out;
+  }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-8px); }
+  to { opacity: 1; transform: translateX(0); }
+}
